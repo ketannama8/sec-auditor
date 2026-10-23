@@ -1,0 +1,47 @@
+# =============================================================================
+# sec-auditor — Runtime Dependencies
+# IBM SkillsBuild Cybersecurity Project Submission
+# =============================================================================
+#
+# Install:
+#   pip install -r requirements.txt
+#
+# Python version required: >= 3.10
+#
+# All core scanning and auditing logic uses the Python standard library only.
+# The two packages below are required for the terminal UI and the web interface.
+# =============================================================================
+
+# Terminal colour output (cross-platform ANSI colour support)
+# Used by: sec_auditor/reporter.py
+# Purpose: Colour-codes port states and header findings in terminal output
+colorama>=0.4.6
+
+# Web framework for the browser-based UI
+# Used by: sec_auditor/web.py + sec_auditor/templates/index.html
+# Purpose: Serves the single-page audit UI and the /api/scan JSON endpoint
+flask>=3.0
+
+# =============================================================================
+# Standard Library Modules Used (no install needed)
+# =============================================================================
+# socket          — TCP port scanning (connect_ex, gethostbyname)
+# ssl             — HTTPS support with self-signed cert handling
+# urllib.request  — HTTP GET requests for header auditing
+# urllib.error    — HTTPError / URLError handling
+# concurrent.futures — ThreadPoolExecutor for concurrent port probing
+# argparse        — CLI argument parsing
+# json            — JSON serialisation for report export
+# dataclasses     — Typed result objects (PortScanResult, HeaderAuditResult)
+# re              — URL scheme stripping regex
+# os              — Directory creation for JSON export
+# threading       — Background server thread
+# =============================================================================
+
+# =============================================================================
+# Development / Testing (standard library — no install needed)
+# =============================================================================
+# unittest        — Test runner and assertion framework
+# unittest.mock   — Mock objects for socket and urllib patching
+# io              — BytesIO for HTTPError fixture objects in tests
+# =============================================================================

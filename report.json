@@ -1,0 +1,173 @@
+{
+  "sec_auditor_version": "0.1.0",
+  "target": "example.com",
+  "resolved_ip": "104.20.23.154",
+  "port_scan": [
+    {
+      "port": 21,
+      "service_name": "FTP",
+      "is_open": false
+    },
+    {
+      "port": 22,
+      "service_name": "SSH",
+      "is_open": false
+    },
+    {
+      "port": 23,
+      "service_name": "Telnet",
+      "is_open": false
+    },
+    {
+      "port": 25,
+      "service_name": "SMTP",
+      "is_open": false
+    },
+    {
+      "port": 53,
+      "service_name": "DNS",
+      "is_open": false
+    },
+    {
+      "port": 80,
+      "service_name": "HTTP",
+      "is_open": true
+    },
+    {
+      "port": 110,
+      "service_name": "POP3",
+      "is_open": false
+    },
+    {
+      "port": 143,
+      "service_name": "IMAP",
+      "is_open": false
+    },
+    {
+      "port": 443,
+      "service_name": "HTTPS",
+      "is_open": true
+    },
+    {
+      "port": 445,
+      "service_name": "SMB",
+      "is_open": false
+    },
+    {
+      "port": 3306,
+      "service_name": "MySQL",
+      "is_open": false
+    },
+    {
+      "port": 3389,
+      "service_name": "RDP",
+      "is_open": false
+    },
+    {
+      "port": 5432,
+      "service_name": "PostgreSQL",
+      "is_open": false
+    },
+    {
+      "port": 6379,
+      "service_name": "Redis",
+      "is_open": false
+    },
+    {
+      "port": 8080,
+      "service_name": "HTTP-Proxy",
+      "is_open": true
+    },
+    {
+      "port": 8443,
+      "service_name": "HTTPS-Alt",
+      "is_open": true
+    }
+  ],
+  "http_audits": [
+    {
+      "target_url": "http://example.com:80/",
+      "server_banner": "cloudflare",
+      "present_headers": {},
+      "missing_headers": [
+        "Content-Security-Policy",
+        "Strict-Transport-Security",
+        "X-Frame-Options",
+        "X-Content-Type-Options",
+        "Referrer-Policy",
+        "Permissions-Policy"
+      ],
+      "recommendations": {
+        "Content-Security-Policy": "Add 'Content-Security-Policy: default-src \\'self\\'' to restrict resource origins and mitigate Cross-Site Scripting (XSS) and data-injection attacks.",
+        "Strict-Transport-Security": "Add 'Strict-Transport-Security: max-age=31536000; includeSubDomains' to enforce HTTPS and prevent protocol-downgrade and cookie-hijacking attacks.",
+        "X-Frame-Options": "Add 'X-Frame-Options: DENY' (or SAMEORIGIN) to prevent your pages from being embedded in iframes, mitigating clickjacking attacks.",
+        "X-Content-Type-Options": "Add 'X-Content-Type-Options: nosniff' to stop browsers from MIME-sniffing responses, preventing content-type confusion attacks.",
+        "Referrer-Policy": "Add 'Referrer-Policy: strict-origin-when-cross-origin' to control how much referrer information is sent, limiting information leakage to third parties.",
+        "Permissions-Policy": "Add 'Permissions-Policy: geolocation=(), microphone=(), camera=()' to explicitly disable powerful browser features and reduce the attack surface."
+      }
+    },
+    {
+      "target_url": "https://example.com:443/",
+      "server_banner": "cloudflare",
+      "present_headers": {},
+      "missing_headers": [
+        "Content-Security-Policy",
+        "Strict-Transport-Security",
+        "X-Frame-Options",
+        "X-Content-Type-Options",
+        "Referrer-Policy",
+        "Permissions-Policy"
+      ],
+      "recommendations": {
+        "Content-Security-Policy": "Add 'Content-Security-Policy: default-src \\'self\\'' to restrict resource origins and mitigate Cross-Site Scripting (XSS) and data-injection attacks.",
+        "Strict-Transport-Security": "Add 'Strict-Transport-Security: max-age=31536000; includeSubDomains' to enforce HTTPS and prevent protocol-downgrade and cookie-hijacking attacks.",
+        "X-Frame-Options": "Add 'X-Frame-Options: DENY' (or SAMEORIGIN) to prevent your pages from being embedded in iframes, mitigating clickjacking attacks.",
+        "X-Content-Type-Options": "Add 'X-Content-Type-Options: nosniff' to stop browsers from MIME-sniffing responses, preventing content-type confusion attacks.",
+        "Referrer-Policy": "Add 'Referrer-Policy: strict-origin-when-cross-origin' to control how much referrer information is sent, limiting information leakage to third parties.",
+        "Permissions-Policy": "Add 'Permissions-Policy: geolocation=(), microphone=(), camera=()' to explicitly disable powerful browser features and reduce the attack surface."
+      }
+    },
+    {
+      "target_url": "http://example.com:8080/",
+      "server_banner": null,
+      "present_headers": {},
+      "missing_headers": [
+        "Content-Security-Policy",
+        "Strict-Transport-Security",
+        "X-Frame-Options",
+        "X-Content-Type-Options",
+        "Referrer-Policy",
+        "Permissions-Policy"
+      ],
+      "recommendations": {
+        "Content-Security-Policy": "Add 'Content-Security-Policy: default-src \\'self\\'' to restrict resource origins and mitigate Cross-Site Scripting (XSS) and data-injection attacks.",
+        "Strict-Transport-Security": "Add 'Strict-Transport-Security: max-age=31536000; includeSubDomains' to enforce HTTPS and prevent protocol-downgrade and cookie-hijacking attacks.",
+        "X-Frame-Options": "Add 'X-Frame-Options: DENY' (or SAMEORIGIN) to prevent your pages from being embedded in iframes, mitigating clickjacking attacks.",
+        "X-Content-Type-Options": "Add 'X-Content-Type-Options: nosniff' to stop browsers from MIME-sniffing responses, preventing content-type confusion attacks.",
+        "Referrer-Policy": "Add 'Referrer-Policy: strict-origin-when-cross-origin' to control how much referrer information is sent, limiting information leakage to third parties.",
+        "Permissions-Policy": "Add 'Permissions-Policy: geolocation=(), microphone=(), camera=()' to explicitly disable powerful browser features and reduce the attack surface."
+      }
+    },
+    {
+      "target_url": "http://example.com:8443/",
+      "server_banner": "cloudflare",
+      "present_headers": {},
+      "missing_headers": [
+        "Content-Security-Policy",
+        "Strict-Transport-Security",
+        "X-Frame-Options",
+        "X-Content-Type-Options",
+        "Referrer-Policy",
+        "Permissions-Policy"
+      ],
+      "recommendations": {
+        "Content-Security-Policy": "Add 'Content-Security-Policy: default-src \\'self\\'' to restrict resource origins and mitigate Cross-Site Scripting (XSS) and data-injection attacks.",
+        "Strict-Transport-Security": "Add 'Strict-Transport-Security: max-age=31536000; includeSubDomains' to enforce HTTPS and prevent protocol-downgrade and cookie-hijacking attacks.",
+        "X-Frame-Options": "Add 'X-Frame-Options: DENY' (or SAMEORIGIN) to prevent your pages from being embedded in iframes, mitigating clickjacking attacks.",
+        "X-Content-Type-Options": "Add 'X-Content-Type-Options: nosniff' to stop browsers from MIME-sniffing responses, preventing content-type confusion attacks.",
+        "Referrer-Policy": "Add 'Referrer-Policy: strict-origin-when-cross-origin' to control how much referrer information is sent, limiting information leakage to third parties.",
+        "Permissions-Policy": "Add 'Permissions-Policy: geolocation=(), microphone=(), camera=()' to explicitly disable powerful browser features and reduce the attack surface."
+      }
+    }
+  ]
+}
